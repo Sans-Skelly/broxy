@@ -1,6 +1,6 @@
 # Broxy
 
-    A simple transparent web proxy written with PHP & cURL with basic cookie support
+A simple transparent web proxy written with PHP & cURL with basic cookie support
     
 ## Usage
 Change `$REMOTE_ADDRESS` and `$PROXY_ADDRESS`
