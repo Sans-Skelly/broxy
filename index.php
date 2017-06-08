@@ -26,7 +26,7 @@ SOFTWARE.
 session_start();
 
 $PRINT_HTML = false;
-$REMOTE_ADDRESS = "beremaran.com"; // address to be proxified
+$REMOTE_ADDRESS = "en.wikipedia.com"; // address to be proxified
 $PROXY_ADDRESS = "localhost:8090"; // address of Broxy script
 
 //$ESCAPED_REMOTE_ADDRESS = str_replace(".", "\\.", $REMOTE_ADDRESS);
@@ -61,7 +61,7 @@ if (isset($REQUEST_HEADERS["Host"]))
     $REQUEST_HEADERS["Host"] = $REMOTE_ADDRESS;
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://" . prepareRemoteURL());
+curl_setopt($ch, CURLOPT_URL, "https://" . prepareRemoteURL());
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
@@ -71,7 +71,7 @@ curl_setopt($ch, CURLOPT_VERBOSE, 1);
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($_POST));
 }
-//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 curl_setopt($ch, CURLOPT_COOKIESESSION, 1);
 curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__) . '/cookies/'.session_id().'_cookie.txt');
