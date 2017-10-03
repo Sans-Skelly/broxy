@@ -16,7 +16,8 @@ A simple transparent web proxy written with PHP & cURL with basic cookie support
 {
     "host": "https://beremaran.com",
     "targetHost": "http://localhost:8000"
-}```
+}
+```
  * Copy `.htaccess` file
  * Give read/write permissions to `cookies` folder
  * Done.
