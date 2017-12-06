@@ -1,4 +1,4 @@
 {
-    "host": "https://beremaran.com",
-    "targetHost": "http://localhost:8000"
+    "host": "https://unblocked.herokuapp.com",
+    "targetHost": "http://unblocked.herokuapp.com"
 }
